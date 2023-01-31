@@ -46,7 +46,6 @@ code {
   color: #000;
 }
 
-
 .logo img {
   width: 2em;
   height: 2em;
@@ -63,8 +62,12 @@ code {
   font-size: 16px;
 }
 
+.nav-links li a {
+  color: black;
+}
+
 .myprofile {
-  border-left : 2px solid #000;
+  border-left: 2px solid #000;
   padding-left: 1em;
 }
 
@@ -73,6 +76,5 @@ code {
 }
 
 .inactive {
- text-decoration: none;
+  text-decoration: none;
 }
-
