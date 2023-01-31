@@ -66,6 +66,12 @@ code {
   color: black;
 }
 
+.myprofile-card {
+  position: relative;
+  top: 80px;
+  left: 20px;
+}
+
 .myprofile {
   border-left: 2px solid #000;
   padding-left: 1em;
