@@ -1,10 +1,13 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import rockets from '../images/rockets.jpg';
+// import { fetchRockets } from '../redux/slice/rocketslice';
 
 const Rockets = () => {
   const rocket = useSelector((state) => state.rocket);
   console.log(rocket);
+  // const dispatch = useDispatch();
+  // console.log(dispatch(fetchRockets()));
   return (
 
     <>

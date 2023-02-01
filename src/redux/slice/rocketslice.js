@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { useSelector } from 'react-redux';
 
 // Action
 export const fetchRockets = createAsyncThunk('fetchRockets', async () => {
