@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Table } from 'react-bootstrap';
-import { fetchMissions, joinMission } from '../redux/missions/missions';
+import { fetchMissions, joinMission, leaveMission } from '../redux/missions/missions';
 
 const Missions = () => {
   const mission = useSelector((state) => state.mission);
@@ -31,13 +31,11 @@ const Missions = () => {
                   : (<span className="bg-secondary text-white rounded-1 p-1">NOT A MEMBER</span>)}
               </td>
               <td className="col-2 text-center pt-5">
-                <button
-                  type="button"
-                  className="align-self-center btn btn-primary bg-light text-dark border border-dark"
-                  onClick={() => dispatch(joinMission(mission))}
-                >
-                  Join Mission
-                </button>
+                {mission.reserved ? (
+                  <button type="button" className="btn btn-white border-2 border-danger" onClick={() => dispatch(leaveMission(mission))}>Leave Mission</button>
+                ) : (
+                  <button type="button" className="btn btn-light border-2 border-secondary" onClick={() => dispatch(joinMission(mission))}>Join Mission</button>
+                )}
               </td>
             </tr>
           ))}

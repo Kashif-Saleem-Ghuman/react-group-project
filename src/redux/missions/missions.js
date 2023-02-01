@@ -4,6 +4,7 @@ import axios from 'axios';
 // Action Types
 const FETCH_MISSIONS = 'react-group-project/missions/FETCH_MISSIONS';
 const JOIN_MISSION = 'react-group-project/missions/JOIN_MISSION';
+const LEAVE_MISSION = 'react-group-project/missions/LEAVE_MISSION';
 
 // Action Creators
 const fetchMissions = () => async (dispatch) => {
@@ -28,6 +29,11 @@ const joinMission = (mission) => ({
   payload: mission,
 });
 
+const leaveMission = (mission) => ({
+  type: LEAVE_MISSION,
+  payload: mission,
+});
+
 // Reducer
 const missionsReducer = (state = [], action) => {
   switch (action.type) {
@@ -43,10 +49,20 @@ const missionsReducer = (state = [], action) => {
         }
         return mission;
       });
+    case LEAVE_MISSION:
+      return state.map((mission) => {
+        if (mission.mission_id === action.payload.mission_id) {
+          return {
+            ...mission,
+            reserved: !mission.reserved,
+          };
+        }
+        return mission;
+      });
     default:
       return state;
   }
 };
 
-export { fetchMissions, joinMission };
+export { fetchMissions, joinMission, leaveMission };
 export default missionsReducer;
