@@ -44,7 +44,7 @@ const missionsReducer = (state = [], action) => {
         if (mission.mission_id === action.payload.mission_id) {
           return {
             ...mission,
-            reserved: !mission.reserved,
+            reserved: true,
           };
         }
         return mission;
@@ -54,7 +54,7 @@ const missionsReducer = (state = [], action) => {
         if (mission.mission_id === action.payload.mission_id) {
           return {
             ...mission,
-            reserved: !mission.reserved,
+            reserved: false,
           };
         }
         return mission;
