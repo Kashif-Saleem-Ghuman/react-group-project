@@ -11,6 +11,18 @@ const Rockets = () => {
     dispatch(fetchRockets());
   }, [dispatch]);
   console.log('This is the sate revised: ', rocket);
+
+  // const rocketArr = Object.values(rocket);
+  // console.log('onverted to Array: ', rocketArr);
+  // const data = rocketArr[1];
+  // console.log('this is data: ', data, typeof data);
+  // const mappedState = rocket.data.map((item) => item);
+  // console.log(mappedState);
+  if ('data' in rocket && rocket.data != null) {
+    rocket.data.forEach((e) => {
+      console.log('E =', e.rocket_id);
+    });
+  }
   return (
     <>
       <div className="container-rocket-card">
