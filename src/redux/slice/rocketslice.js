@@ -52,7 +52,7 @@ const rocketSlice = createSlice({
     });
     builder.addCase(fetchRockets.rejected, (state, action) => {
       state.isError = true;
-      console.log('Error: ', action.payload);
+      return ('Error: ', action.payload);
     });
   },
 });
