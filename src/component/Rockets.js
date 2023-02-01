@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchRockets } from '../redux/slice/rocketslice';
+import { fetchRockets, reservation, cancelReservation } from '../redux/slice/rocketslice';
 
 const Rockets = () => {
   const rocket = useSelector((state) => state.rocket);
@@ -13,10 +13,6 @@ const Rockets = () => {
   console.log('This is the sate revised: ', rocket);
 
   if ('data' in rocket && rocket.data != null) {
-    // rocket.data.forEach((e) => {
-    //   console.log('E =', e.rocket_id);
-    // });
-
     return (
       <>
         {rocket.data.map((e) => (
@@ -27,16 +23,18 @@ const Rockets = () => {
             <div>
               <h2>{e.rocket_name}</h2>
               <p>
+                {e.reserved && <span className="btn btn-primary me-1 disabled">Reserved</span>}
                 {e.rocket_description}
               </p>
-              <button type="submit" className="btn btn-primary">Reserve Rocket</button>
+              {e.reserved && <button type="submit" className="btn   btn-outline-danger" onClick={() => dispatch(cancelReservation(e.rocket_id))}>Cancel Reservation</button>}
+              {!e.reserved && <button type="submit" className="btn btn-primary" onClick={() => dispatch(reservation(e.rocket_id))}>Reserve Rocket</button>}
             </div>
           </div>
         ))}
       </>
     );
   }
-  return 'one';
+  return 'Loading....';
 };
 
 export default Rockets;
