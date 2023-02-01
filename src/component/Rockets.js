@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import rockets from '../images/rockets.jpg';
 import { fetchRockets } from '../redux/slice/rocketslice';
 
 const Rockets = () => {
@@ -22,16 +21,12 @@ const Rockets = () => {
         {rocket.data.map((e) => (
           <div key={e.rocket_id} className="container-rocket-card">
             <div>
-              <img className="rocket-image" src={rockets} alt="logo" />
+              <img className="rocket-image" src={e.flickr_images[0]} alt="logo" />
             </div>
             <div>
               <h2>{e.rocket_name}</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero,
-                vitae porro ducimus ab cupiditate maiores corporis et nostrum dolores in!
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero,
-                vitae porro ducimus ab cupiditate maiores corporis et nostrum dolores in!
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero,
+                {e.rocket_description}
               </p>
               <button type="submit" className="btn btn-primary">Reserve Rocket</button>
             </div>

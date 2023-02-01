@@ -19,7 +19,7 @@ const rocketSlice = createSlice({
       const rocketArr = action.payload.map((data) => ({
         rocket_id: data.rocket_id,
         rocket_name: data.rocket_name,
-        rocket_type: data.rocket_type,
+        rocket_description: data.description,
         flickr_images: data.flickr_images,
       }));
       state.data = rocketArr;
