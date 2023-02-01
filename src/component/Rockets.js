@@ -34,7 +34,7 @@ const Rockets = () => {
       </>
     );
   }
-  return 'Loading...';
+  return 'Loading....';
 };
 
 export default Rockets;
