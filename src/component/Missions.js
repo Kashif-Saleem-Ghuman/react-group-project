@@ -31,10 +31,11 @@ const Missions = () => {
                   : (<span className="bg-secondary text-white rounded-1 p-1">NOT A MEMBER</span>)}
               </td>
               <td className="col-2 text-center pt-5">
-                {mission.reserved ? (
-                  <button type="button" className="btn btn-white border-2 border-danger" onClick={() => dispatch(leaveMission(mission))}>Leave Mission</button>
-                ) : (
+                {!mission.reserved && (
                   <button type="button" className="btn btn-light border-2 border-secondary" onClick={() => dispatch(joinMission(mission))}>Join Mission</button>
+                )}
+                {mission.reserved && (
+                  <button type="button" className="btn btn-light border-2 border-danger" onClick={() => dispatch(leaveMission(mission))}>Leave Mission</button>
                 )}
               </td>
             </tr>
