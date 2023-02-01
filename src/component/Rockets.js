@@ -23,6 +23,7 @@ const Rockets = () => {
             <div>
               <h2>{e.rocket_name}</h2>
               <p>
+                {e.reserved && <span className="btn btn-primary">Reserved</span>}
                 {e.rocket_description}
               </p>
               <button type="submit" className="btn btn-primary" onClick={() => dispatch(reservation(e.rocket_id))}>Reserve Rocket</button>
