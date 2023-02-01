@@ -16,7 +16,13 @@ const rocketSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(fetchRockets.fulfilled, (state, action) => {
       state.isLoading = false;
-      state.data = action.payload;
+      const rocketArr = action.payload.map((data) => ({
+        rocket_id: data.rocket_id,
+        rocket_name: data.rocket_name,
+        rocket_type: data.rocket_type,
+        flickr_images: data.flickr_images,
+      }));
+      state.data = rocketArr;
     });
     builder.addCase(fetchRockets.pending, (state, action) => {
       state.isLoading = true;
