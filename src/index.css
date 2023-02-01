@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   font-family:
@@ -85,11 +91,12 @@ code {
 
 .rocket-image {
   width: 200px;
-  height: 150px;
+  height: 200px;
 }
 
 .container-rocket-card {
   display: flex;
   padding: 2vw;
   gap: 1vw;
+  align-items: flex-end;
 }
