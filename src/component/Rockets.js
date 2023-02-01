@@ -34,9 +34,8 @@ const Rockets = () => {
         ))}
       </>
     );
-  } else {
-    return <p>No rockets available</p>;
   }
+  return 'one';
 };
 
 export default Rockets;
