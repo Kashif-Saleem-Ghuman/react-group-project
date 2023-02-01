@@ -25,14 +25,14 @@ const Rockets = () => {
               <p>
                 {e.rocket_description}
               </p>
-              <button type="submit" className="btn btn-primary" onClick={() => dispatch(reservation())}>Reserve Rocket</button>
+              <button type="submit" className="btn btn-primary" onClick={() => dispatch(reservation(e.rocket_id))}>Reserve Rocket</button>
             </div>
           </div>
         ))}
       </>
     );
   }
-  return 'one';
+  return 'Loading...';
 };
 
 export default Rockets;

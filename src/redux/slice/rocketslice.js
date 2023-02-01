@@ -15,13 +15,12 @@ const rocketSlice = createSlice({
     reserved: false,
   },
   reducers: {
-    reservation: (state, action) => {
-      state.data.map((rocket) => {
-        if (rocket.rocket_id === action.payload) {
-          rocket.reserved = !rocket.reserved;
+    reservation(state, action) {
+      return state.data.map((rocket) => {
+        if (rocket.rocket_id !== action.payload) {
+          return { ...rocket };
         }
-        state.reserved = true;
-        return rocket;
+        return { ...rocket, reserved: true };
       });
     },
   },
@@ -33,6 +32,7 @@ const rocketSlice = createSlice({
         rocket_name: data.rocket_name,
         rocket_description: data.description,
         flickr_images: data.flickr_images,
+        reserved: false,
       }));
       state.data = rocketArr;
     });
