@@ -2,7 +2,8 @@
 import axios from 'axios';
 
 // Action Types
-const FETCH_MISSIONS = 'FETCH_MISSIONS';
+const FETCH_MISSIONS = 'react-group-project/missions/FETCH_MISSIONS';
+const JOIN_MISSION = 'react-group-project/missions/JOIN_MISSION';
 
 // Action Creators
 const fetchMissions = () => async (dispatch) => {
@@ -13,6 +14,7 @@ const fetchMissions = () => async (dispatch) => {
       mission_id: mission.mission_id,
       mission_name: mission.mission_name,
       description: mission.description,
+      reserved: false,
     });
   });
   dispatch({
@@ -21,15 +23,30 @@ const fetchMissions = () => async (dispatch) => {
   });
 };
 
+const joinMission = (mission) => ({
+  type: JOIN_MISSION,
+  payload: mission,
+});
+
 // Reducer
 const missionsReducer = (state = [], action) => {
   switch (action.type) {
     case FETCH_MISSIONS:
       return action.payload;
+    case JOIN_MISSION:
+      return state.map((mission) => {
+        if (mission.mission_id === action.payload.mission_id) {
+          return {
+            ...mission,
+            reserved: !mission.reserved,
+          };
+        }
+        return mission;
+      });
     default:
       return state;
   }
 };
 
-export { fetchMissions };
+export { fetchMissions, joinMission };
 export default missionsReducer;
