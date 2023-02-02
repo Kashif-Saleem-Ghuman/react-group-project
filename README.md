@@ -172,7 +172,7 @@ Example:
 
 - GitHub: [@Tekhlay](https://github.com/Tekhlay)
 - Twitter: [@TekhlatB12](https://twitter.com/TekhlayB12)
-- LinkedIn: [@Teklay](https://www.linkedin.com/in/teklay-birhane-20b64a18a/)
+- LinkedIn: [@Teklay](https://www.linkedin.com/in/tekhlay/)
 
 👤 **Kashif**
 
