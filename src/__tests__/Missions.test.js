@@ -4,7 +4,6 @@ import renderer from 'react-test-renderer';
 import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import { userEvent } from '@testing-library/user-event';
 import store from '../redux/store';
 import Missions from '../component/Missions';
 import App from '../App';
