@@ -1,13 +1,19 @@
 /* eslint-disable no-console */
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchRockets, reservation, cancelReservation } from '../redux/slice/rocketslice';
 
 const Rockets = () => {
   const rocket = useSelector((state) => state.rocket);
   const dispatch = useDispatch();
+  const shouldFetch = useRef(true);
   useEffect(() => {
-    dispatch(fetchRockets());
+    if (shouldFetch.current) {
+      if (rocket.data.length === 0) {
+        shouldFetch.current = false;
+        dispatch(fetchRockets());
+      }
+    }
   }, [dispatch]);
   if ('data' in rocket && rocket.data != null) {
     return (

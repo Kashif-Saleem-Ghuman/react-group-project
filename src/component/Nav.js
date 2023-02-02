@@ -17,10 +17,6 @@ const Nav = () => (
         <li className="myprofile"><NavLink to="/myprofile" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>My Profile</NavLink></li>
       </ul>
     </nav>
-
-    {/* <div className="mobile-popup">
-      <FaBars />
-    </div> */}
   </>
 
 );
