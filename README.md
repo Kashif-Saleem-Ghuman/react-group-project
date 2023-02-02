@@ -176,9 +176,9 @@ Example:
 
 👤 **Kashif**
 
-- GitHub: [Kashif](#)
-- Twitter: [Kashif](#)
-- LinkedIn: [Kashif](#)
+- GitHub: [Kashif](https://github.com/Kashif-Saleem-Ghuman)
+- Twitter: [Kashif](https://twitter.com/Kashif14Saleem)
+- LinkedIn: [Kashif](https://www.linkedin.com/in/kashifsaleemghuman/)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
