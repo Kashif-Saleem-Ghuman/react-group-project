@@ -9,7 +9,7 @@ const Rockets = () => {
   const shouldFetch = useRef(true);
   useEffect(() => {
     if (shouldFetch.current) {
-      if (rocket.data.length === 0) {
+      if (rocket.data === null || rocket.data.length === 0) {
         shouldFetch.current = false;
         dispatch(fetchRockets());
       }
