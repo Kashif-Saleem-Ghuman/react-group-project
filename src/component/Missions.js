@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Table } from 'react-bootstrap';
 import { fetchMissions, joinMission, leaveMission } from '../redux/missions/missions';
@@ -7,8 +7,14 @@ import { fetchMissions, joinMission, leaveMission } from '../redux/missions/miss
 const Missions = () => {
   const mission = useSelector((state) => state.mission);
   const dispatch = useDispatch();
+  const shouldFetch = useRef(true);
   useEffect(() => {
-    dispatch(fetchMissions());
+    if (shouldFetch.current) {
+      if (mission.length === 0) {
+        shouldFetch.current = false;
+        dispatch(fetchMissions());
+      }
+    }
   }, [dispatch]);
   return (
     <div className="container mt-3">
