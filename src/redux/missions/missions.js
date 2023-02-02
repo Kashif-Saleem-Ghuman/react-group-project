@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import axios from 'axios';
+// import axios from 'axios';
 
 // Action Types
 const FETCH_MISSIONS = 'react-group-project/missions/FETCH_MISSIONS';
@@ -8,9 +8,10 @@ const LEAVE_MISSION = 'react-group-project/missions/LEAVE_MISSION';
 
 // Action Creators
 const fetchMissions = () => async (dispatch) => {
-  const response = await axios.get('https://api.spacexdata.com/v3/missions');
+  const response = await fetch('https://api.spacexdata.com/v3/missions');
+  const data = await response.json();
   const missionsData = [];
-  response.data.forEach((mission) => {
+  data.forEach((mission) => {
     missionsData.push({
       mission_id: mission.mission_id,
       mission_name: mission.mission_name,

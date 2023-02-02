@@ -5,13 +5,10 @@ import { fetchRockets, reservation, cancelReservation } from '../redux/slice/roc
 
 const Rockets = () => {
   const rocket = useSelector((state) => state.rocket);
-  console.log('This is the state: ', rocket);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchRockets());
   }, [dispatch]);
-  console.log('This is the sate revised: ', rocket);
-
   if ('data' in rocket && rocket.data != null) {
     return (
       <>

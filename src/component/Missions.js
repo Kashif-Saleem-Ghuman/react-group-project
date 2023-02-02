@@ -24,7 +24,7 @@ const Missions = () => {
         <tbody>
           {mission.map((mission) => (
             <tr key={mission.mission_id}>
-              <td className="col-2">{mission.mission_name}</td>
+              <th className="col-2">{mission.mission_name}</th>
               <td className="col-6">{mission.description}</td>
               <td className="col-2 text-center pt-5">
                 {mission.reserved ? (<span className="bg-info text-white rounded-1 p-1">Active Member</span>)
@@ -32,10 +32,25 @@ const Missions = () => {
               </td>
               <td className="col-2 text-center pt-5">
                 {!mission.reserved && (
-                  <button type="button" className="btn btn-light border-2 border-secondary" onClick={() => dispatch(joinMission(mission))}>Join Mission</button>
+                  <button
+                    type="submit"
+                    className="btn btn-light border-2 border-secondary"
+                    onClick={() => dispatch(joinMission(mission))}
+                  >
+                    Join Mission
+
+                  </button>
                 )}
                 {mission.reserved && (
-                  <button type="button" className="btn btn-light border-2 border-danger" onClick={() => dispatch(leaveMission(mission))}>Leave Mission</button>
+                  <button
+                    name="leaveMission"
+                    type="submit"
+                    className="btn btn-light border-2 border-danger"
+                    onClick={() => dispatch(leaveMission(mission))}
+                  >
+                    Leave Mission
+
+                  </button>
                 )}
               </td>
             </tr>
