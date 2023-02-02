@@ -95,7 +95,7 @@ After you're finished please remove all the comments and instructions!
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link comming soon]()
+- [Live Demo Link](https://space-travelers-hub-b216.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -172,7 +172,7 @@ Example:
 
 - GitHub: [@Tekhlay](https://github.com/Tekhlay)
 - Twitter: [@TekhlatB12](https://twitter.com/TekhlayB12)
-- LinkedIn: [Teklay](https://www.linkedin.com/in/teklay-birhane-20b64a18a/)
+- LinkedIn: [@Teklay](https://www.linkedin.com/in/teklay-birhane-20b64a18a/)
 
 👤 **Kashif**
 
@@ -185,7 +185,7 @@ Example:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Add styling**
+- [ ] **Add Dragons page**
 - [ ] **FUll website development**
 - [ ] **Test and Deploy**
 

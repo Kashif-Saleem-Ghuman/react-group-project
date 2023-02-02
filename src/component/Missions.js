@@ -24,7 +24,7 @@ const Missions = () => {
         <tbody>
           {mission.map((mission) => (
             <tr key={mission.mission_id}>
-              <td className="col-2">{mission.mission_name}</td>
+              <th className="col-2">{mission.mission_name}</th>
               <td className="col-6">{mission.description}</td>
               <td className="col-2 text-center pt-5">
                 {mission.reserved ? (<span className="bg-info text-white rounded-1 p-1">Active Member</span>)
