@@ -6,7 +6,9 @@ import { Table } from 'react-bootstrap';
 
 const MyProfile = () => {
   const mission = useSelector((state) => state.mission);
+  const rockets = useSelector((state) => state.rocket);
   const joined = mission.filter((m) => m.reserved);
+  const reserved = rockets.data.filter((r) => r.reserved);
   return (
     <div className="container mt-3">
       <div className="row">
@@ -31,6 +33,22 @@ const MyProfile = () => {
         </div>
         <div className="col-6">
           <h3>My Rockets</h3>
+          <Table bordered>
+            <thead>
+              <tr>
+                {reserved.length === 0 && (
+                <th className="bg-danger p-3">No Rockets Reserved</th>
+                )}
+              </tr>
+            </thead>
+            <tbody>
+              {reserved.map((rocket) => (
+                <tr key={rocket.rocket_id}>
+                  <td className="p-3">{rocket.rocket_name}</td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
         </div>
       </div>
     </div>
